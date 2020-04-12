@@ -18,8 +18,17 @@ module.exports = {
                         presets: ['@babel/preset-env']
                     }
                 }
-            }
-        ]
+            },
+            {
+                test: /\.png$/,
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                    },
+                ],
+            },
+        ],
     },
     plugins: [
         new HtmlWebPackPlugin({
