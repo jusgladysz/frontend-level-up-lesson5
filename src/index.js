@@ -1,3 +1,4 @@
-import script from "./script";
+import script from './script';
+import './styles/style.sass';
 
 script();
