@@ -1,10 +1,13 @@
 {
+  "homepage": "http://jusgladysz.github.io/frontend-level-up-lesson1",
   "name": "frontend-level-up-lesson1",
   "version": "1.0.0",
   "description": "",
   "private": true,
   "main": "index.js",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,6 +23,7 @@
     "babel-loader": "^8.1.0",
     "css-loader": "^3.5.2",
     "file-loader": "^6.0.0",
+    "gh-pages": "^2.2.0",
     "html-webpack-plugin": "^4.2.0",
     "node-sass": "^4.13.1",
     "sass-loader": "^8.0.2",
