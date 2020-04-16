@@ -1,5 +1,6 @@
 const path = require('path');
-const HtmlWebPackPlugin = require('html-webpack-plugin')
+const HtmlWebPackPlugin = require('html-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
@@ -20,16 +21,20 @@ module.exports = {
                 }
             },
             {
-                test: /\.png$/,
+                test: /\.png$/i,
                 exclude: /node_modules/,
                 use: [
                     {
                         loader: 'file-loader',
+                        options: {
+                            outputPath: 'assets',
+                        },
                     },
                 ],
+
             },
             {
-                test: /\.sass$/,
+                test: /\.s[ac]ss$/i,
                 exclude: /node_modules/,
                 use: [
                     'style-loader',
@@ -40,6 +45,7 @@ module.exports = {
         ],
     },
     plugins: [
+        new CleanWebpackPlugin(),
         new HtmlWebPackPlugin({
             template: './src/index.html',
             filename: './index.html'
