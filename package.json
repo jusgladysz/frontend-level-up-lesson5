@@ -9,6 +9,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode=development --open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Justyna Gładysz",
@@ -27,7 +28,8 @@
     "sass-loader": "^8.0.2",
     "style-loader": "^1.1.3",
     "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
   },
   "browserslist": [
     "defaults"

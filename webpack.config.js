@@ -21,7 +21,7 @@ module.exports = {
                 }
             },
             {
-                test: /\.png$/i,
+                test: /\.(jpe?g|png|svg|gif|ico|webp|eot|ttf|woff|woff2|pdf|mp4|webm)$/,
                 exclude: /node_modules/,
                 use: [
                     {
