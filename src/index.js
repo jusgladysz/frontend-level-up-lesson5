@@ -1,10 +1,7 @@
 import './styles/reset.scss'
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import './styles/style.scss';
-// import script from './script';
+import './styles/style.scss';
 
 require('jquery');
 require('popper.js');
 require('bootstrap');
-
-script();
