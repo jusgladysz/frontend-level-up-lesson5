@@ -38,6 +38,7 @@ $Text-Style-4-color: #151515;
 }
 
 .offer{
+  padding: 0;
   &__item{
     padding:5px;
   }
@@ -61,4 +62,16 @@ $Text-Style-4-color: #151515;
   letter-spacing: normal;
   text-align: center;
   color: $Text-Style-4-color
+}
+
+.New-Arrivals {
+  font-family: Jost, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: $Text-Style-4-color;
 }
