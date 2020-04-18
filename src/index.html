@@ -18,11 +18,12 @@
                     </button>
                     <div class="collapse navbar-collapse Text-Style-4" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
-                            <a class="header__navbar--link nav-item nav-link" href="#">Home</a>
-                            <a class="header__navbar--link nav-item nav-link" href="#">Shop</a>
-                            <a class="header__navbar--link nav-item nav-link" href="#">Elements</a>
-                            <a class="header__navbar--link nav-item nav-link" href="#">Blog</a>
-                            <a class="header__navbar--link nav-item nav-link" href="#">Page</a>
+                            <a class="header__navbar__link header__navbar__link--active nav-item nav-link"
+                               href="#">Home</a>
+                            <a class="header__navbar__link nav-item nav-link" href="#">Shop</a>
+                            <a class="header__navbar__link nav-item nav-link" href="#">Elements</a>
+                            <a class="header__navbar__link nav-item nav-link" href="#">Blog</a>
+                            <a class="header__navbar__link nav-item nav-link" href="#">Page</a>
                         </div>
                     </div>
                 </div>
@@ -42,8 +43,8 @@
             </nav>
         </div>
     </div>
-    <div class="container-fluid header__carousel row">
-        <div class="container align-self-center">
+    <div class="container-fluid header__carousel row align-items-center">
+        <div class="container">
             <!--Carousel Wrapper-->
             <div class="carousel slide carousel-multi-item" data-ride="carousel" id="multi-item-example">
                 <!--Slides-->
@@ -183,6 +184,28 @@
                 <div class="offer col-12 col-md-12"><img alt="d" class="img-fluid offer__item"
                                                          src="https://via.placeholder.com/769x310?text=d"></div>
             </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6">
+            <h3 class="Our-newsletter">Our newsletter</h3>
+            <p class="Join-our-list">Join our list and get 15% off your first purchase!</p>
+            <form>
+                <div class="row">
+                    <div class="col-9 pr-0">
+                        <input aria-describedby="emailHelp" class="form-control border-bottom-solid"
+                               id="exampleInputEmail1"
+                               placeholder="Email Address"
+                               type="email">
+                        <span class="form-text text-muted Dont-spam" id="emailHelp">
+                            <sup>*</sup>Don't worry we don't spam
+                        </span>
+                    </div>
+                    <div class="col-3 pl-0">
+                        <button class="Subscribe border-bottom-solid" type="submit">Subscribe</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>
