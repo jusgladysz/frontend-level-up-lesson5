@@ -37,6 +37,11 @@ $Text-Style-4-color: #151515;
 
 }
 
+.offer{
+  &__item{
+    padding:5px;
+  }
+}
 @font-face {
   font-family: Jost;
   src: local(Jost-Medium),
