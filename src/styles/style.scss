@@ -1,3 +1,6 @@
+$carousel-color: #263a49;
+$Text-Style-4-color: #151515;
+
 .tile {
   width: 309px;
   height: 504px
@@ -8,18 +11,28 @@
   margin-right: auto;
   margin-left: auto;
 
-   &__background {
+  &__background {
     width: auto;
     height: 550px;
     background-image: url('https://via.placeholder.com/1920x550?text=junbotron-image');
     padding-right: 0;
     padding-left: 0;
     border-radius: 0;
+    margin-bottom: 0;
   }
 
   &__navbar {
     padding-right: 0;
     padding-left: 0;
+    &--link{
+      color: $Text-Style-4-color;
+    }
+  }
+  &__carousel {
+    background-color: $carousel-color;
+    width: auto;
+    height: 438px;
+    margin-top: 0;
   }
 
 }
@@ -42,5 +55,5 @@
   line-height: normal;
   letter-spacing: normal;
   text-align: center;
-  color: #151515;
+  color: $Text-Style-4-color
 }
