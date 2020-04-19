@@ -38,6 +38,10 @@ $join-list-color: #454545;
         border-bottom: 2px solid $Text-Style-4-color;
         border-radius: 2px;
       }
+
+      &:hover{
+        color: $Text-Style-4-color ;
+      }
     }
   }
 
