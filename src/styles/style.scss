@@ -1,6 +1,7 @@
 $carousel-color: #263a49;
 $Text-Style-4-color: #151515;
 $join-list-color: #454545;
+$footer-color: #858585;
 
 .tile {
   width: 309px;
@@ -39,8 +40,8 @@ $join-list-color: #454545;
         border-radius: 2px;
       }
 
-      &:hover{
-        color: $Text-Style-4-color ;
+      &:hover {
+        color: $Text-Style-4-color;
       }
     }
   }
@@ -154,7 +155,7 @@ $join-list-color: #454545;
 }
 
 .Subscribe {
-  font-family: Jost,sans-serif;
+  font-family: Jost, sans-serif;
   font-size: 13px;
   font-weight: 500;
   font-stretch: normal;
@@ -167,7 +168,51 @@ $join-list-color: #454545;
   height: calc(1.5em + .75rem + 6px);
 }
 
-.border-bottom-light{
-      border-bottom: solid 1px #ececec;;
+.border-bottom-light {
+  border-bottom: solid 1px #ececec;;
+}
+
+.footer {
+
+  &__link {
+    font-family: Jost, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: $Text-Style-4-color;
+
+    &:hover {
+      color: $Text-Style-4-color;
+    }
   }
+
+  &__label {
+    font-family: Jost, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: $footer-color;
+    margin: 0;
+  }
+
+  &__button {
+    font-family: Jost, sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: $Text-Style-4-color;
+  }
+}
+
 
