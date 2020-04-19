@@ -57,6 +57,11 @@ $footer-color: #858585;
 
 }
 
+.margin0 {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .offer {
   padding: 0;
 
@@ -213,6 +218,18 @@ $footer-color: #858585;
     text-align: left;
     color: $Text-Style-4-color;
   }
+}
+.rights{
+  font-family: Jost, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: $Text-Style-4-color;
+  margin-bottom: 0;
 }
 
 
