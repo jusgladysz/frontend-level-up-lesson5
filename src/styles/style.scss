@@ -4,6 +4,8 @@ $join-list-color: #454545;
 $footer-color: #858585;
 $tile-promotion-color: #111111;
 $old-price-color: #959595;
+$black: black;
+$white: white;
 
 .header {
   width: 100%;
@@ -153,6 +155,21 @@ $old-price-color: #959595;
   }
 }
 
+.productsBtn {
+  font-family: Jost, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: $black;
+  background-color: $white;
+  padding: 17px 33px;
+  border: 2px solid;
+}
+
 @media (max-width: 768px) {
   .offer__body {
     max-width: 380px;
@@ -180,7 +197,7 @@ $old-price-color: #959595;
     line-height: normal;
     letter-spacing: normal;
     text-align: left;
-    color: var(--black);
+    color: $black;
 
     &--twoLine {
       max-width: 150px;
@@ -199,7 +216,7 @@ $old-price-color: #959595;
     line-height: normal;
     letter-spacing: normal;
     text-align: center;
-    color: var(--black);
+    color: $black;
 
     &--border {
       top: 110px;
