@@ -6,6 +6,7 @@ $tile-promotion-color: #111111;
 $old-price-color: #959595;
 $black: black;
 $white: white;
+$featuredProduct-color: #282c34;
 
 .header {
   width: 100%;
@@ -53,7 +54,40 @@ $white: white;
     margin-left: 0;
     margin-right: 0;
   }
+}
 
+.featuredProduct {
+  position: relative;
+
+  &__title {
+    position: absolute;
+    top: 284px;
+    left: 20px;
+    font-family: Jost, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: $featuredProduct-color;
+  }
+
+  &__price {
+    position: absolute;
+    top: 306px;
+    left: 20px;
+    font-family: Jost, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: $black;
+  }
 }
 
 .tile {
