@@ -146,7 +146,7 @@
         <div class="row align-items-center justify-content-center py-5">
             <h2 class="New-Arrivals text-center">New Arrivals</h2>
         </div>
-        <div class="row">
+        <div class="row" id="featuredProducts">
             <div class="col-6 col-md-3 card tile">
                 <img alt="1" class="card-img-top" src="https://via.placeholder.com/309x390?text=1">
                 <div class="card-body tile__body">
@@ -185,7 +185,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row" hidden id="allProducts">
             <div class="col-6 col-md-3 card tile">
                 <img alt="5" class="card-img-top" src="https://via.placeholder.com/309x390?text=5">
                 <div class="card-body tile__body">
@@ -226,7 +226,7 @@
         </div>
         <div class="row align-items-center justify-content-center py-5">
             <div>
-                <button class="productsBtn" type="button">All products</button>
+                <button class="productsBtn" id="allProductsBtn" type="button">All products</button>
             </div>
         </div>
         <div class="row">
@@ -348,7 +348,7 @@
         <div class="row align-items-center py-3">
             <div class="col-12 col-md-6">
                 <div class="row">
-                    <p class="rights">&copy;2019 Zonex All rights reserved</p>
+                    <p class="rights">&copy;<span id="footer-year"></span> All rights reserved</p>
                 </div>
             </div>
             <div class="col-12 col-md-6">
@@ -359,6 +359,7 @@
             </div>
         </div>
     </div>
+    <button class="scroll-btn" id="myBtn" title="Go to top">Top</button>
 </div>
 <script crossorigin="anonymous"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
