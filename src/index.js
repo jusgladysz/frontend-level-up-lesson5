@@ -4,7 +4,7 @@ import './styles/style.scss';
 import mainModule from './js/main-module';
 
 document.addEventListener('DOMContentLoaded', () => {
-    mainModule.setCurrentYearToFooter();
+    mainModule.updateFooterYear();
     mainModule.initLoadAllProducts();
     mainModule.initScrollToTop();
 });

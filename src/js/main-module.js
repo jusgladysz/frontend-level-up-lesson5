@@ -27,7 +27,7 @@ export default {
         })
     },
 
-    setCurrentYearToFooter: function () {
+    updateFooterYear: function () {
         document.getElementById('footer-year').innerHTML = new Date().getFullYear().toString();
     }
 }
