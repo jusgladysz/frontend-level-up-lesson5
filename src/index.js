@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mainModule.updateFooterYear();
     mainModule.initLoadCarouselItems();
     mainModule.initLoadAllProducts();
+    mainModule.initLoadFeaturedTiles();
     mainModule.initLoadMoreProducts();
     mainModule.initScrollToTop();
 });

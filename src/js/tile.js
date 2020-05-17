@@ -107,7 +107,6 @@ export function loadMoreTiles(limit = 8, offset = 0) {
     const row = createRow();
 
     getProducts(4209, limit, offset)
-        .then(response => response.json())
         .then(data => {
             data['products'].forEach(value => {
                 row.appendChild(createTile(value));

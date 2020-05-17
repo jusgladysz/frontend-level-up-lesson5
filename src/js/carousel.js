@@ -80,7 +80,6 @@ export function loadCarouselTiles() {
         const carouselItemRow = createRow();
 
         getProducts(4210, 3, offset)
-            .then(response => response.json())
             .then(data => {
                 let isFirst = true;
                 data['products'].forEach(value => {

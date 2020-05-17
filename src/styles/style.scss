@@ -218,6 +218,29 @@ $footer-label-color: #858585;
   padding: 0;
   margin: 0;
 
+  &__one {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 547px;
+    max-height: 630px;
+  }
+
+  &__two {
+    max-width: 380px;
+    max-height: 310px;
+  }
+
+  &__three {
+    max-width: 380px;
+    max-height: 310px;
+  }
+
+  &__four {
+    max-width: 769px;
+    max-height: 310px;
+  }
+
   &__body {
     position: relative;
     padding: 5px;
@@ -244,7 +267,7 @@ $footer-label-color: #858585;
 
   &__shop {
     position: absolute;
-    top: 80px;
+    top: 110px;
     left: 40px;
     font-family: Jost, sans-serif;
     font-size: 13px;
@@ -257,7 +280,7 @@ $footer-label-color: #858585;
     color: $primary-text-color;
 
     &--border {
-      top: 110px;
+      top: 140px;
       border: 0;
       border-bottom: 2px solid $primary-text-color;
     }
