@@ -1,4 +1,5 @@
 import {loadMoreTiles} from "./tile";
+import {loadCarouselTiles} from "./carousel";
 let arrivalsOffset = 8;
 const _scrollButton = document.getElementById('myBtn');
 
@@ -23,6 +24,10 @@ export default {
 
     initLoadAllProducts: function () {
         loadMoreTiles();
+    },
+
+    initLoadCarouselItems: function () {
+        loadCarouselTiles();
     },
 
     initLoadMoreProducts: function () {

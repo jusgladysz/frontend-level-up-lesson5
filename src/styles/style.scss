@@ -88,6 +88,10 @@ $footer-label-color: #858585;
     text-align: left;
     color: $primary-text-color;
   }
+
+  &__image {
+    max-height: 338px;
+  }
 }
 
 .tile {

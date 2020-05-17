@@ -10,6 +10,6 @@ function getInit(method) {
     };
 }
 
-export function getProducts(limit = 8, offset = 0) {
-    return fetch(`https://asos2.p.rapidapi.com/products/v2/list?country=US&currency=USD&sort=freshness&lang=en-US&sizeSchema=US&offset=${offset}&categoryId=4209&limit=${limit}&store=US`, getInit('GET'));
+export function getProducts(categoryId, limit = 8, offset = 0) {
+    return fetch(`https://asos2.p.rapidapi.com/products/v2/list?country=US&currency=USD&sort=freshness&lang=en-US&sizeSchema=US&offset=${offset}&categoryId=${categoryId}&limit=${limit}&store=US`, getInit('GET'));
 }
