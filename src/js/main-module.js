@@ -1,5 +1,5 @@
 import {loadMoreTiles} from "./tile";
-
+let arrivalsOffset = 8;
 const _scrollButton = document.getElementById('myBtn');
 
 function scrollFunction() {
@@ -22,9 +22,15 @@ export default {
     },
 
     initLoadAllProducts: function () {
+        loadMoreTiles();
+    },
+
+    initLoadMoreProducts: function () {
         const button = document.getElementById('allProductsBtn');
         button.addEventListener('click', function () {
-            loadMoreTiles();
+            let limit = 4;
+            loadMoreTiles(limit, arrivalsOffset);
+            arrivalsOffset += limit;
         })
     },
 

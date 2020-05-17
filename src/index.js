@@ -6,5 +6,6 @@ import mainModule from './js/main-module';
 document.addEventListener('DOMContentLoaded', () => {
     mainModule.updateFooterYear();
     mainModule.initLoadAllProducts();
+    mainModule.initLoadMoreProducts();
     mainModule.initScrollToTop();
 });
