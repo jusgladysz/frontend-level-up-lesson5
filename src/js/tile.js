@@ -111,6 +111,10 @@ export function loadMoreTiles(limit = 8, offset = 0) {
             data['products'].forEach(value => {
                 row.appendChild(createTile(value));
             });
+        })
+        .catch(error => {
+            console.error(error);
+            alert("Wystąpił błąd podczas komunikacji z serwerem. Spróbuj później.");
         });
     const arrivalsProductsSection = document.getElementById('arrivalsProducts');
     arrivalsProductsSection.appendChild(row);

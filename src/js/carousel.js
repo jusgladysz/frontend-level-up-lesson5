@@ -86,7 +86,11 @@ export function loadCarouselTiles() {
                     carouselItemRow.appendChild(createTile(value, isFirst));
                     isFirst = false;
                 });
-            });
+            })
+            .catch(error => {
+                console.error(error);
+                alert("Wystąpił błąd podczas komunikacji z serwerem. Spróbuj później.");
+            })
         carouselItem.appendChild(carouselItemRow);
         return carouselItem;
     }
