@@ -1,90 +1,9 @@
-import bestSellerImgUrl from "../assets/kz-number-one.svg";
 import hotImgUrl from "../assets/kz-fire.svg";
-import newImgUrl from "../assets/kz-bolt-line.svg";
 import onlyAFewLeftImgUrl from "../assets/kz-few.svg";
-import topRateImgUrl from "../assets/kz-star-line.png";
+import {getProducts} from "./api";
 
-export class Tile {
 
-    constructor(
-        imageAltText,
-        imageSrc,
-        isSale,
-        promotionType,
-        tileName,
-        price
-    ) {
-        this.imageAltText = imageAltText;
-        this.imageSrc = imageSrc;
-        this.isSale = isSale;
-        this.promotionType = promotionType;
-        this.tileName = tileName;
-        this.price = price;
-    }
-}
-
-export class PromotionType {
-    static get BEST_SELLER() {
-        return "best seller";
-    }
-
-    static get NEW() {
-        return "New";
-    }
-
-    static get HOT() {
-        return "Hot";
-    }
-
-    static get TOP_RATE() {
-        return "Top rate";
-    }
-
-    static get ONLY_A_FEW_LEFT() {
-        return "Only a few left";
-    }
-
-    static get NONE() {
-        return "NONE";
-    }
-}
-
-const productsToAdd = [];
-
-productsToAdd.push(new Tile(
-    "9",
-    "https://via.placeholder.com/309x390?text=9",
-    false,
-    PromotionType.NONE,
-    'Extra exclusive item',
-    "$189"
-))
-productsToAdd.push(new Tile(
-    "10",
-    "https://via.placeholder.com/309x390?text=10",
-    false,
-    PromotionType.HOT,
-    'Extra exclusive item',
-    "$111"
-))
-productsToAdd.push(new Tile(
-    "11",
-    "https://via.placeholder.com/309x390?text=11",
-    true,
-    PromotionType.BEST_SELLER,
-    'Extra exclusive item',
-    "$139"
-))
-productsToAdd.push(new Tile(
-    "12",
-    "https://via.placeholder.com/309x390?text=12",
-    false,
-    PromotionType.NONE,
-    'Extra exclusive item',
-    "$179"
-))
-
-export function loadAllTiles() {
+export function loadMoreTiles(limit = 8, offset = 0) {
     function createRow() {
         const row = document.createElement('div');
         row.classList.add('row');
@@ -101,8 +20,8 @@ export function loadAllTiles() {
         function addTileImage(tile) {
             const img = document.createElement('img');
             img.classList.add('card-img-top');
-            img.alt = tileData.imageAltText;
-            img.src = tileData.imageSrc;
+            img.alt = tileData.name;
+            img.src = `https://${tileData['imageUrl']}`;
             tile.appendChild(img);
         }
 
@@ -120,21 +39,14 @@ export function loadAllTiles() {
                 return tileBody;
             }
 
-            function resolvePromotionImage(promotionType) {
-                switch (promotionType) {
-                    case PromotionType.BEST_SELLER:
-                        return bestSellerImgUrl;
-                    case PromotionType.HOT:
-                        return hotImgUrl;
-                    case PromotionType.NEW:
-                        return newImgUrl;
-                    case PromotionType.ONLY_A_FEW_LEFT:
-                        return onlyAFewLeftImgUrl;
-                    case PromotionType.TOP_RATE:
-                        return topRateImgUrl;
-                    default:
-                        return "";
+            function resolvePromotionImage(price) {
+                if (price['isMarkedDown']) {
+                    return hotImgUrl;
                 }
+                if (price['isOutletPrice']) {
+                    return onlyAFewLeftImgUrl;
+                }
+                return "";
             }
 
             function addPromotion(tileBody) {
@@ -144,7 +56,7 @@ export function loadAllTiles() {
                 const promotionImage = document.createElement('img');
                 promotionImage.classList.add('tile__promotion--icon')
                 promotionImage.alt = 'icon';
-                promotionImage.src = resolvePromotionImage(tileData.promotionType);
+                promotionImage.src = resolvePromotionImage(tileData.price);
 
                 promotion.appendChild(promotionImage);
                 promotion.appendChild(document.createTextNode(tileData.promotionType));
@@ -155,20 +67,20 @@ export function loadAllTiles() {
             function addTileName(tileBody) {
                 const tileName = document.createElement('p');
                 tileName.classList.add('tile__name');
-                tileName.innerText = tileData.tileName;
+                tileName.innerText = tileData['name'];
                 tileBody.appendChild(tileName);
             }
 
             function addTilePrice(tileBody) {
                 const tilePrice = document.createElement('p');
                 tilePrice.classList.add('tile__price');
-                tilePrice.innerText = tileData.price;
+                tilePrice.innerText = tileData.price.current.text;
                 tileBody.appendChild(tilePrice);
             }
 
             const tileBody = createTileBodyContainer();
 
-            if (PromotionType.NONE !== tileData.promotionType) {
+            if (tileData.price['isOutletPrice'] || tileData.price['isMarkedDown']) {
                 addPromotion(tileBody);
             }
 
@@ -183,7 +95,7 @@ export function loadAllTiles() {
 
         addTileImage(tile);
 
-        if (tileData.isSale) {
+        if (tileData['isSellingFast']) {
             addSaleLabel(tile);
         }
 
@@ -194,10 +106,13 @@ export function loadAllTiles() {
 
     const row = createRow();
 
-    productsToAdd.forEach(value => {
-        row.appendChild(createTile(value));
-    })
-
-    const newArrivalsSection = document.getElementById('newArrivals');
-    newArrivalsSection.appendChild(row);
+    getProducts(limit, offset)
+        .then(response => response.json())
+        .then(data => {
+            data['products'].forEach(value => {
+                row.appendChild(createTile(value));
+            });
+        });
+    const arrivalsProductsSection = document.getElementById('arrivalsProducts');
+    arrivalsProductsSection.appendChild(row);
 }

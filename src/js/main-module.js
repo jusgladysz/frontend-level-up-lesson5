@@ -1,4 +1,4 @@
-import {loadAllTiles} from "./tile";
+import {loadMoreTiles} from "./tile";
 
 const _scrollButton = document.getElementById('myBtn');
 
@@ -18,15 +18,13 @@ function topFunction() {
 export default {
     initScrollToTop: function () {
         window.onscroll = scrollFunction;
-        _scrollButton.addEventListener('click', topFunction)
+        _scrollButton.addEventListener('click', topFunction);
     },
 
     initLoadAllProducts: function () {
         const button = document.getElementById('allProductsBtn');
-        const section = document.getElementById('allProductsLoader');
         button.addEventListener('click', function () {
-            section.hidden = true;
-            loadAllTiles();
+            loadMoreTiles();
         })
     },
 
