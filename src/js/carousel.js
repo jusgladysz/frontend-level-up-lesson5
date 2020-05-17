@@ -1,4 +1,5 @@
 import {getProducts} from "./api";
+import {showError} from "./alerts";
 
 
 export function loadCarouselTiles() {
@@ -89,7 +90,7 @@ export function loadCarouselTiles() {
             })
             .catch(error => {
                 console.error(error);
-                alert("Wystąpił błąd podczas komunikacji z serwerem. Spróbuj później.");
+                showError();
             })
         carouselItem.appendChild(carouselItemRow);
         return carouselItem;

@@ -1,7 +1,7 @@
 import hotImgUrl from "../assets/kz-fire.svg";
 import onlyAFewLeftImgUrl from "../assets/kz-few.svg";
 import {getProducts} from "./api";
-
+import {showError} from "./alerts";
 
 export function loadMoreTiles(limit = 8, offset = 0) {
     function createRow() {
@@ -114,7 +114,7 @@ export function loadMoreTiles(limit = 8, offset = 0) {
         })
         .catch(error => {
             console.error(error);
-            alert("Wystąpił błąd podczas komunikacji z serwerem. Spróbuj później.");
+            showError();
         });
     const arrivalsProductsSection = document.getElementById('arrivalsProducts');
     arrivalsProductsSection.appendChild(row);

@@ -1,5 +1,7 @@
 import {API_HOST, API_KEY} from "./config";
 import spinner from './spinner';
+import {showError} from "./alerts";
+
 
 function getInit() {
     return {
@@ -17,7 +19,7 @@ export function getProducts(categoryId, limit = 8, offset = 0) {
         .then(response => response.json())
         .catch(error => {
             console.error(error);
-            alert("Wystąpił błąd podczas komunikacji z serwerem. Spróbuj później.");
+            showError();
         })
         .finally(() => spinner.hideSpinner());
 }
@@ -29,7 +31,7 @@ export function getProduct(productId = 9851612) {
         .then(response => response.json())
         .catch(error => {
             console.error(error);
-            alert("Wystąpił błąd podczas komunikacji z serwerem. Spróbuj później.");
+            showError();
         })
         .finally(() => spinner.hideSpinner());
 }

@@ -1,4 +1,5 @@
 import {getProduct} from "./api";
+import {showError} from "./alerts";
 
 
 export function loadFeaturedTiles() {
@@ -10,7 +11,7 @@ export function loadFeaturedTiles() {
         })
         .catch(error => {
             console.error(error);
-            alert("Wystąpił błąd podczas komunikacji z serwerem. Spróbuj później.");
+            showError();
         });
 
     const featured2 = document.getElementById('featured2');
@@ -20,7 +21,7 @@ export function loadFeaturedTiles() {
         })
         .catch(error => {
             console.error(error);
-            alert("Wystąpił błąd podczas komunikacji z serwerem. Spróbuj później.");
+            showError();
         });
 
     const featured3 = document.getElementById('featured3');
@@ -30,7 +31,7 @@ export function loadFeaturedTiles() {
         })
         .catch(error => {
             console.error(error);
-            alert("Wystąpił błąd podczas komunikacji z serwerem. Spróbuj później.");
+            showError();
         });
 
     const featured4 = document.getElementById('featured4');
@@ -40,7 +41,7 @@ export function loadFeaturedTiles() {
         })
         .catch(error => {
             console.error(error);
-            alert("Wystąpił błąd podczas komunikacji z serwerem. Spróbuj później.");
+            showError();
         });
 
     function fillData(element, tileData, isFeatured, imageClass) {
